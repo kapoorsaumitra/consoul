@@ -5,6 +5,8 @@ import { Hero } from "./pages/Hero";
 import { Services } from "./pages/Services";
 import { ChooseUs } from "./pages/ChooseUs";
 import { SuccessStories } from "./pages/SuccessStories";
+import Footer from "./components/Footer";
+
 
 export default function Home() {
 
@@ -16,6 +18,8 @@ export default function Home() {
       <Services />
       <ChooseUs />
       <SuccessStories />
+      <Footer />
+    
     </div>
   );
 }
