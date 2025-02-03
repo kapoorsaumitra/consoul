@@ -253,7 +253,7 @@ export default function Page() {
             </div>
           ))}
         </div>
-        <div className="my-20">
+        <div className="my-20" id="contact">
             <ApplicationForm />
         </div>
       </div>

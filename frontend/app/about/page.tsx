@@ -248,7 +248,7 @@ export default function page() {
           </div>
         </div>
 
-        <div className="bg-white p-12 rounded-b-xl md:rounded-r-xl md:rounded-bl-none">
+        <div className="bg-white p-12 rounded-b-xl md:rounded-r-xl md:rounded-bl-none" id="contact">
           <Form />
         </div>
       </div>

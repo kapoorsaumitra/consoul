@@ -38,7 +38,7 @@ export const Navbar = () => {
       path : "/about"
      },
     { label: "Contact",
-      path : "/contact"
+      path : "#contact"
      },
   ];
 
@@ -57,7 +57,7 @@ export const Navbar = () => {
   return (
     <nav>
       <div className="flex justify-between p-4 px-64">
-        <div className="flex flex-col justify-center cursor-pointer">
+        <div className="flex flex-col justify-center cursor-pointer mr-3  ">
           <Image src="/logos/logo.svg" alt="logo" width={100} height={100} onClick={()=>router.push('/')} />
         </div>
 

@@ -12,13 +12,13 @@ export const ChooseUs = () => {
           </div>
         </div>
 
-        <div className=" w-full mt-32 pr-72 ">
+        <div className=" w-full mt-32 pr-72 " >
         <WhyChooseUsList  />
 
         </div>
       </div>
 
-      <div className="my-20 flex justify-center mx-80">
+      <div className="my-20 flex justify-center mx-80" id="contact" >
         <ContactForm />
       </div>
     </div>
