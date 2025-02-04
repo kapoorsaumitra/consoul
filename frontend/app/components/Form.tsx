@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 
 export const Form = () => {
     const [formData, setFormData] = useState({
@@ -26,8 +26,8 @@ export const Form = () => {
         setIsFormValid(isValid);
     }, [formData]);
 
-    const handleInputChange = (e : any) => {
-        const { name, value } = e.target;
+    const handleInputChange = (e : FormEvent) => {
+        const { name , value } : any  = e.target;
         setFormData(prev => ({
             ...prev,
             [name]: value

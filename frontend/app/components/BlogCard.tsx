@@ -7,14 +7,15 @@ import type { BlogPost } from "../lib/data"
 
 export function BlogCard({ post }: { post: BlogPost }) {
   return (
-    <Card className="overflow-hidden border-none shadow-none">
+    <Card className="group overflow-hidden border-none bg-transparent shadow-none">
       <Link href={`/blog/${post.id}`}>
-        <div className="relative aspect-[1.5] overflow-hidden rounded-lg">
+        <div className="overflow-hidden rounded-lg">
           <Image
             src={post.image || "/placeholder.svg"}
             alt={post.title}
-            fill
-            className="object-cover transition-transform duration-300 hover:scale-105"
+            width={400}
+            height={200}
+            className="aspect-[2/1] w-full object-cover"
           />
         </div>
       </Link>
@@ -24,15 +25,21 @@ export function BlogCard({ post }: { post: BlogPost }) {
           <span>•</span>
           <span>{post.readingTime}</span>
         </div>
-        <Link href={`/blog/${post.id}`} className="group">
-          <h2 className="line-clamp-2 text-xl font-semibold leading-snug tracking-tight group-hover:underline">
+        <Link href={`/blog/${post.id}`}>
+          <h2 className="text-2xl font-semibold tracking-tight text-foreground">
             {post.title}
           </h2>
         </Link>
-        <p className="line-clamp-2 text-muted-foreground">{post.description}</p>
-        <div className="flex flex-wrap gap-2">
+        <p className="text-base text-muted-foreground">
+          {post.description}
+        </p>
+        <div className="flex flex-wrap gap-2 pt-2">
           {post.tags.map((tag) => (
-            <Badge key={tag} variant="secondary" className="rounded-full">
+            <Badge 
+              key={tag} 
+              variant="secondary" 
+              className="rounded-md bg-transparent px-3 py-1 text-sm font-normal text-muted-foreground"
+            >
               {tag}
             </Badge>
           ))}
@@ -41,4 +48,3 @@ export function BlogCard({ post }: { post: BlogPost }) {
     </Card>
   )
 }
-

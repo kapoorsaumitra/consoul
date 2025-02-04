@@ -23,7 +23,7 @@ export const Navbar = () => {
           />
         </svg>
       ),
-    path : "/services"
+    path : "/services/media-ott"
     },
     { label: "Success Stories",
       path : "/success-stories"

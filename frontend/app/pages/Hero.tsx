@@ -55,7 +55,7 @@ export const Hero = () => {
         transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
       >
         {logos.map((logo, index) => (
-          <img key={index} src={logo} className="w-40 h-auto" alt="logo" />
+          <Image key={index} src={logo} className="w-40 h-auto" alt="logo" height={40} width={40} />
         ))}
       </motion.div>
     </div>

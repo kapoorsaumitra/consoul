@@ -13,7 +13,7 @@ export const Ready = () => {
 
         </div>
         <div className="flex justify-center">
-            <button className="bg-[#6438C3] text-white font-semibold p-4 px-10 text-xl rounded-lg">Yes, I am ready. Let's talk</button>
+            <button className="bg-[#6438C3] text-white font-semibold p-4 px-10 text-xl rounded-lg">Yes, I am ready. Let&apos;s talk</button>
         </div>
     </div>
    

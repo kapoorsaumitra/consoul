@@ -12,10 +12,16 @@ const services = [
   { name: "Banking & Financial Services", icon: "/icons/banking.svg", route: "/services/banking&financial" },
 ];
 
+type Service = {
+  name: string;
+  icon: string;
+  route: string;
+};
+
 export const ServicesNav = () => {
   const router = useRouter();
   const pathname = usePathname();
-  const [activeService, setActiveService] = useState("");
+  const [activeService, setActiveService] = useState("Media & OTT");
 
   // Set active service based on current route when component mounts
   useEffect(() => {
@@ -25,7 +31,7 @@ export const ServicesNav = () => {
     }
   }, [pathname]);
 
-  const handleServiceClick = (service : any) => {
+  const handleServiceClick = (service : Service) => {
     setActiveService(service.name);
     router.push(service.route);
   };
@@ -50,7 +56,7 @@ export const ServicesNav = () => {
                 height={20}
                 width={20}
                 className={`transition-all duration-300 ${
-                  isActive ? "filter brightness-0 saturate-100 invert-[0.4] sepia-[1] saturate-[1] hue-rotate-[220deg]" : ""
+                  isActive ? "filter brightness-0 invert-[0.4] sepia-[1] saturate-[1] hue-rotate-[220deg]" : ""
                 }`}
               />
               

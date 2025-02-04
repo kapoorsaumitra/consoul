@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ContactForm } from "./ContactForm";
+import Image from "next/image";
 
 const items = [
   { name: "Pay-as-you-go", icon: "/icons/fingerprints.svg" },
@@ -15,7 +16,10 @@ const ListItem = ({ name, icon }: { name: string; icon: string }) => {
   return (
     <div className="bg-white rounded-xl p-4 w-full max-w-[400px] flex items-center gap-3 shadow-sm hover:scale-[102%] transition-transform">
       <div className="flex items-center justify-center w-8 h-8 rounded-full">
-        <img src={icon} alt="" className="w-full h-full" />
+        <Image src={icon} alt="" className="w-full h-full" 
+          height={32}
+          width={32}
+         />
       </div>
       <span className="text-gray-700 font-medium">{name}</span>
     </div>

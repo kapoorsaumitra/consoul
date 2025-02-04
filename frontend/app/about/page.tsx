@@ -61,10 +61,12 @@ export default function page() {
           <div className="flex justify-center">
             <div className="col-span-1 text-lg">
               <div className="w-64 h-w-64 rounded-lg overflow-hidden">
-                <img
+                <Image
                   src="/logos/founder.svg"
                   alt="Founder"
                   className="w-full h-full object-cover"
+                  height={200}
+                  width={200}
                 />
               </div>
               <div className="text-xl font-bold text-[#555555]">Vani Garg</div>
@@ -79,17 +81,17 @@ export default function page() {
               <div className="col-span-1 px-20">
                 <div className="text-3xl font-semibold">
                   “Consoul was born from a powerful vision: To elevate the
-                  customer's voice and place them at the centre of every
+                  customer&apos;s voice and place them at the centre of every
                   business decision.”
                 </div>
                 <div className="text-xl text-[#555555] mt-10">
                   This passion for "marketing that delivers" guided our
-                  founder's journey through renowned companies like HDFC Bank,
+                  founder&apos;s journey through renowned companies like HDFC Bank,
                   Westside, Axis Bank, and Zee5. Each experience honed their
                   expertise in crafting impactful marketing strategies that
                   drive real results.
                   <br />
-                  <br /> This background fuels Consoul's mission - to empower
+                  <br /> This background fuels Consoul&apos;s mission - to empower
                   businesses to make customer-centric decisions and achieve
                   lasting success.
                 </div>
@@ -167,10 +169,12 @@ export default function page() {
                 >
                   <div className="m-4">
                     <div className="w-58 h-w-58 rounded-lg overflow-hidden border">
-                      <img
+                      <Image
                         src={member.image}
                         alt="Founder"
                         className="w-full h-full object-cover"
+                        height={200}
+                        width={200}
                       />
                       <div className="text-white bg-[#6438C3] p-4">
                         <div className="text-xl font-bold text-white bg-[#6438C3]">

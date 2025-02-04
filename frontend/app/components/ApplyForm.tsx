@@ -82,7 +82,7 @@ export default function ApplicationForm() {
       <div className="text-center mb-10">
         <h1 className="text-2xl font-semibold text-gray-800 mb-2">Cannot find a role that fits you?</h1>
         <p className="text-gray-600 text-base">
-          Send us your application, and we'll reach out if there's a role that's the right fit for you
+          Send us your application, and we&apos;ll reach out if there&apos;s a role that&apos;s the right fit for you
         </p>
       </div>
 

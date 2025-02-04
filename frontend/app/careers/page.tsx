@@ -175,10 +175,10 @@ export default function Page() {
         </div>
         <div className="flex justify-center">
           <div className="text-lg text-[#555555] p-4">
-            We're on a mission to change how
+            We&apos;re on a mission to change how
             <br /> businesses build lasting relationships with
-            <br /> their customers. If you're passionate
-            <br /> about it, we'd love to have you on board.
+            <br /> their customers. If you&apos;re passionate
+            <br /> about it, we&apos;d love to have you on board.
           </div>
         </div>
       </div>
@@ -199,13 +199,13 @@ export default function Page() {
           </div>
           <div className="flex justify-center my-6 text-xl text-[#555555] ">
             <div>
-              Can't find a role that matches your expertise?
+              Can&apos;t find a role that matches your expertise?
               <span className="underline text-[#6438C3] cursor-pointer">
                 {" "}
                 Apply with your CV and a cover letter
               </span>
               <br />
-              We'd love to learn more about you and explore how you can be part
+              We&apos;d love to learn more about you and explore how you can be part
               of our team!
             </div>
           </div>
@@ -220,9 +220,9 @@ export default function Page() {
                 {section.positions.map((job, jobIndex) => (
                   <div
                     key={jobIndex}
-                    className="p-6 rounded-2xl border border-purple-100 bg-white hover:bg-[#FAF7FF] transition-colors w-[280px]"
+                    className="p-6 rounded-2xl border border-purple-300 bg-white hover:bg-[#FAF7FF] transition-colors w-[280px]"
                   >
-                    <div className="text-purple-600 text-sm font-medium">
+                    <div className="text-[#6438C3] text-sm font-medium">
                       {section.category}
                     </div>
                     <h3 className="text-xl font-semibold text-gray-800 mt-2">
@@ -241,7 +241,7 @@ export default function Page() {
                     <div className="mt-4">
                       <a
                         href="#"
-                        className="text-purple-600 hover:underline inline-flex items-center text-sm font-medium"
+                        className="text-[#6438C3] hover:underline inline-flex items-center text-sm font-medium"
                       >
                         View job
                         <span className="ml-1">→</span>

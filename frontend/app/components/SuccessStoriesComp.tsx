@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react"
 import { motion } from "framer-motion"
+import Image from "next/image";
 export const SuccessStoriesComp = () => {
 
     const stories = [
@@ -113,10 +114,12 @@ export const SuccessStoriesComp = () => {
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="w-[250px] h-[250px] md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px] flex justify-center items-center"
           >
-            <img
+            <Image
               src={stories[index].image || "/placeholder.svg"}
               alt="Success Story"
               className="max-w-full h-auto"
+              width={400}
+              height={400}
             />
           </motion.div>
         </div>

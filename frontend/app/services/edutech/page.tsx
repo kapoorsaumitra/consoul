@@ -1,5 +1,4 @@
 "use client"
-
 import { useState } from "react"
 import Image from "next/image"
 
@@ -111,11 +110,69 @@ export default function Page() {
 
   const handleSubtitleClick = (sectionId: number) => {
     setActiveSection(sectionId)
-   
     setActiveFeaturesMap(prev => ({
       ...prev,
       [sectionId]: (prev[sectionId] + 1) % sections[sectionId].features.length
     }))
+  }
+
+  const renderSectionContent = (section: Section) => {
+    const isMiddleSection = section.id === 1
+    const imageComponent = (
+      <div className="relative h-[300px] rounded-lg">
+        <Image
+          src={sections[section.id].features[activeFeaturesMap[section.id]].image || "/placeholder.svg"}
+          alt={sections[section.id].features[activeFeaturesMap[section.id]].title}
+          className="object-cover transition-opacity duration-300"
+          priority
+          height={500}
+          width={500}
+        />
+      </div>
+    )
+
+    const featuresComponent = (
+      <div className="space-y-8">
+        {section.features.map((feature, index) => (
+          <div
+            key={index}
+            className="relative pl-6 cursor-pointer group"
+            onClick={() => {
+              setActiveSection(section.id)
+              setActiveFeaturesMap(prev => ({
+                ...prev,
+                [section.id]: index
+              }))
+            }}
+          >
+            <div
+              className={`absolute left-0 top-0 w-1 rounded-full h-full transition-all duration-300 ${
+                activeSection === section.id && activeFeaturesMap[section.id] === index
+                  ? "bg-[#6438C3]"
+                  : "bg-purple-100 group-hover:bg-purple-200"
+              }`}
+            />
+            <h3
+              className={`text-xl font-semibold mb-2 transition-colors duration-300 ${
+                activeSection === section.id && activeFeaturesMap[section.id] === index
+                  ? "text-[#6438C3]"
+                  : "text-gray-800 group-hover:text-[#6438C3]"
+              }`}
+            >
+              {feature.title}
+            </h3>
+            <p className="text-gray-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    )
+
+    return (
+      <div className="grid md:grid-cols-2 gap-12 items-start">
+        {isMiddleSection ? imageComponent : featuresComponent}
+        {isMiddleSection ? featuresComponent : imageComponent}
+      </div>
+    )
   }
 
   return (
@@ -126,65 +183,20 @@ export default function Page() {
             <div className="mb-12 text-center">
               <h2
                 className={`text-3xl font-bold mb-4 transition-colors duration-300 cursor-pointer ${
-                  activeSection === section.id ? "text-purple-600" : "text-gray-800 hover:text-purple-500"
+                  activeSection === section.id ? "text-[#6438C3]" : "text-gray-800 hover:text-[#6438C3]"
                 }`}
                 onClick={() => setActiveSection(section.id)}
               >
                 {section.title}
               </h2>
               <p 
-                className="text-gray-600 max-w-2xl mx-auto cursor-pointer hover:text-purple-500"
+                className="text-gray-600 max-w-2xl mx-auto cursor-pointer hover:text-[#6438C3]"
                 onClick={() => handleSubtitleClick(section.id)}
               >
                 {section.subtitle}
               </p>
             </div>
-
-            <div className="grid md:grid-cols-2 gap-12 items-start">
-              <div className="space-y-8">
-                {section.features.map((feature, index) => (
-                  <div
-                    key={index}
-                    className="relative pl-6 cursor-pointer group"
-                    onClick={() => {
-                      setActiveSection(section.id)
-                      setActiveFeaturesMap(prev => ({
-                        ...prev,
-                        [section.id]: index
-                      }))
-                    }}
-                  >
-                    <div
-                      className={`absolute left-0 top-0 w-1 rounded-full h-full transition-all duration-300 ${
-                        activeSection === section.id && activeFeaturesMap[section.id] === index
-                          ? "bg-purple-600"
-                          : "bg-purple-100 group-hover:bg-purple-200"
-                      }`}
-                    />
-                    <h3
-                      className={`text-xl font-semibold mb-2 transition-colors duration-300 ${
-                        activeSection === section.id && activeFeaturesMap[section.id] === index
-                          ? "text-purple-600"
-                          : "text-gray-800 group-hover:text-purple-500"
-                      }`}
-                    >
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600">{feature.description}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="relative h-[300px] rounded-lg">
-                <Image
-                  src={sections[section.id].features[activeFeaturesMap[section.id]].image || "/placeholder.svg"}
-                  alt={sections[section.id].features[activeFeaturesMap[section.id]].title}
-                  className="object-cover transition-opacity duration-300"
-                  priority
-                  height={500}
-                  width={500}
-                />
-              </div>
-            </div>
+            {renderSectionContent(section)}
           </div>
         </section>
       ))}
