@@ -42,12 +42,12 @@ export const Navbar = () => {
      },
   ];
 
-  const [selected, setSelected] = useState("");
+
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const router = useRouter();
 
   const handleClick = (path: string, index: number) => {
-    setSelected(path);
+    
     setActiveIndex(index);
     router.push(path);
   };

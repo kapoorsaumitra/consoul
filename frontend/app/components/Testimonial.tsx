@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useState } from "react";
 
 export const Testimonial = () => {
@@ -136,13 +137,16 @@ export const Testimonial = () => {
               className="flex flex-col px-20"
             >
               <div className="text-3xl text-[#6438C3] mb-10">
-                "{testimonials[currentIndex].description}"
+                &ldquo;{testimonials[currentIndex].description}&rdquo;
               </div>
+
               <div className="flex gap-3 mt-auto">
                 <div className="flex bg-slate-400 h-10 w-10 rounded-full flex-shrink-0">
-                  <img
+                  <Image
                     src={testimonials[currentIndex].image}
                     alt="logo"
+                    width={40}
+                    height={40}
                     className="h-10 w-10 rounded-full"
                   />
                 </div>

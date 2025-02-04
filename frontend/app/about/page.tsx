@@ -80,12 +80,12 @@ export default function page() {
             <div>
               <div className="col-span-1 px-20">
                 <div className="text-3xl font-semibold">
-                  “Consoul was born from a powerful vision: To elevate the
+                &ldquo;Consoul was born from a powerful vision: To elevate the
                   customer&apos;s voice and place them at the centre of every
-                  business decision.”
+                  business decision.&ldquo;
                 </div>
                 <div className="text-xl text-[#555555] mt-10">
-                  This passion for "marketing that delivers" guided our
+                  This passion for &ldquo;marketing that delivers&ldquo; guided our
                   founder&apos;s journey through renowned companies like HDFC Bank,
                   Westside, Axis Bank, and Zee5. Each experience honed their
                   expertise in crafting impactful marketing strategies that
@@ -200,7 +200,7 @@ export default function page() {
           Join our team
         </div>
         <div className="text-center text-lg text-gray-800">
-          We believe it takes great people to make a great product. That's why we hire not<br />
+          We believe it takes great people to make a great product. That&apos;s why we hire not<br />
           only the perfect professional fits, but people who embody our company values.
         </div>
         <div className="text-[#6438C3] text-lg hover:underline cursor-pointer flex justify-center">
