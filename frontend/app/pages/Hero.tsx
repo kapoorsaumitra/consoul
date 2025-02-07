@@ -1,16 +1,48 @@
-"use client"
+"use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 export const Hero = () => {
-    const logos = ["/logos/gitam.svg" , "/logos/macmerise.svg","/logos/hdfc.svg" , "/logos/kfc.svg" , "/logos/westside.svg" , "/logos/axisbank.svg" , "/logos/p&g.svg" , "/logos/lomotif.svg" , "/logos/yesstyle.svg" , "/logos/coto.svg","/logos/gitam.svg" , "/logos/macmerise.svg","/logos/hdfc.svg" , "/logos/kfc.svg" , "/logos/westside.svg" , "/logos/axisbank.svg" , "/logos/p&g.svg" , "/logos/lomotif.svg" , "/logos/yesstyle.svg" , "/logos/coto.svg","/logos/gitam.svg" , "/logos/macmerise.svg","/logos/hdfc.svg" , "/logos/kfc.svg" , "/logos/westside.svg" , "/logos/axisbank.svg" , "/logos/p&g.svg" , "/logos/lomotif.svg" , "/logos/yesstyle.svg" , "/logos/coto.svg"] 
+  const logos = [
+    "/logos/gitam.svg",
+    "/logos/macmerise.svg",
+    "/logos/hdfc.svg",
+    "/logos/kfc.svg",
+    "/logos/westside.svg",
+    "/logos/axisbank.svg",
+    "/logos/p&g.svg",
+    "/logos/lomotif.svg",
+    "/logos/yesstyle.svg",
+    "/logos/coto.svg",
+    "/logos/gitam.svg",
+    "/logos/macmerise.svg",
+    "/logos/hdfc.svg",
+    "/logos/kfc.svg",
+    "/logos/westside.svg",
+    "/logos/axisbank.svg",
+    "/logos/p&g.svg",
+    "/logos/lomotif.svg",
+    "/logos/yesstyle.svg",
+    "/logos/coto.svg",
+    "/logos/gitam.svg",
+    "/logos/macmerise.svg",
+    "/logos/hdfc.svg",
+    "/logos/kfc.svg",
+    "/logos/westside.svg",
+    "/logos/axisbank.svg",
+    "/logos/p&g.svg",
+    "/logos/lomotif.svg",
+    "/logos/yesstyle.svg",
+    "/logos/coto.svg",
+  ];
+
   return (
     <div>
       <div className="grid grid-cols-2">
         <div className="col-span-1">
-          <div className=" flex justify-end">
-            <div className=" p-4 grid text-[#555555] pt-20 gap-6">
-              <div className="font-extrabold text-5xl">
+          <div className="flex justify-end">
+            <div className="p-4 grid text-[#555555] pt-20 gap-6">
+              <div className="font-extrabold text-4xl">
                 Your go-to partner to
                 <br />
                 increase{" "}
@@ -23,9 +55,39 @@ export const Hero = () => {
               </div>
 
               <div className="grid gap-2 text-lg">
-                <div className="flex "><span className="flex flex-col justify-center mx-2"><Image src={"icons/key-points.svg"} alt="point" height={20} width={20}></Image></span>Keep customers loyal</div>
-                <div className="flex"><span className="flex flex-col justify-center mx-2"><Image src={"icons/key-points.svg"} alt="point" height={20} width={20}></Image></span>Achieve KPIs faster</div>
-                <div className="flex"><span className="flex flex-col justify-center mx-2"><Image src={"icons/key-points.svg"} alt="point" height={20} width={20}></Image></span>Maximise ROIs with solutions backed by data</div>
+                <div className="flex">
+                  <span className="flex flex-col justify-center mx-2">
+                    <Image
+                      src={"icons/key-points.svg"}
+                      alt="point"
+                      height={20}
+                      width={20}
+                    />
+                  </span>
+                  Keep customers loyal
+                </div>
+                <div className="flex">
+                  <span className="flex flex-col justify-center mx-2">
+                    <Image
+                      src={"icons/key-points.svg"}
+                      alt="point"
+                      height={20}
+                      width={20}
+                    />
+                  </span>
+                  Achieve KPIs faster
+                </div>
+                <div className="flex">
+                  <span className="flex flex-col justify-center mx-2">
+                    <Image
+                      src={"icons/key-points.svg"}
+                      alt="point"
+                      height={20}
+                      width={20}
+                    />
+                  </span>
+                  Maximise ROIs with solutions backed by data
+                </div>
               </div>
 
               <div>
@@ -38,27 +100,44 @@ export const Hero = () => {
         </div>
 
         <div className="col-span-1">
-          <div className=" p-4 flex justify-start">
-            <Image
-              src="/components/hero.png"
-              alt="Hero"
-              width={550}
-              height={550}
-            />
+          <div className="p-4 flex justify-start overflow-hidden h-[550px]">
+            <motion.div
+              animate={{ y: [0, -1300, 0] }} // Move down by the full height (550px) and then back up
+              transition={{
+                duration: 15,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <Image
+                src="/components/hero1.png"
+                alt="Hero"
+                width={550}
+                height={1100} // Taller to simulate the scroll
+              />
+            </motion.div>
           </div>
         </div>
       </div>
+
       <div className="overflow-hidden w-full mt-6">
-      <motion.div
-        className="flex space-x-20"
-        animate={{ x: ["0%", "-100%"] }}
-        transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
-      >
-        {logos.map((logo, index) => (
-          <Image key={index} src={logo} className="w-40 h-auto" alt="logo" height={40} width={40} />
-        ))}
-      </motion.div>
-    </div>
+        <motion.div
+          className="flex space-x-20"
+          animate={{ x: ["0%", "-100%"] }}
+          transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
+        >
+          {logos.map((logo, index) => (
+            <Image
+              key={index}
+              src={logo}
+              className="w-40 h-auto"
+              alt="logo"
+              height={40}
+              width={40}
+            />
+          ))}
+        </motion.div>
+      </div>
     </div>
   );
 };

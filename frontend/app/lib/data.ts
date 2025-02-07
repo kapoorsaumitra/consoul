@@ -19,6 +19,7 @@ export interface BlogPost {
       category: "Business Analytics",
       tags: ["digital marketing", "lead gen", "customer lifecycle"],
       image: "/components/success.svg",   },
+      
     {
       id: "2",
       title: "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
@@ -28,8 +29,8 @@ export interface BlogPost {
       category: "Business Analytics",
       tags: ["business intelligence", "data analytics", "AI tools"],
       image: "/components/success.svg",   },
-    // Add more blog posts here...
-    // Duplicate the above structure multiple times to have enough posts for pagination
+
+    
   ].concat(
     Array(10)
       .fill(0)

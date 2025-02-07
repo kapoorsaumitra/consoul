@@ -37,7 +37,7 @@ export const ServicesNav = () => {
   };
 
   return (
-    <div className="flex justify-between m-4 my-10 mx-80">
+    <div className="flex justify-between m-4 my-10 mx-48 ">
       {services.map((service) => {
         const isActive = activeService === service.name;
         

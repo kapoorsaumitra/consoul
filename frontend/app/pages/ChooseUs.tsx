@@ -18,7 +18,7 @@ export const ChooseUs = () => {
         </div>
       </div>
 
-      <div className="my-20 flex justify-center mx-80" id="contact" >
+      <div className="my-20 flex justify-center mx-24" id="contact" >
         <ContactForm />
       </div>
     </div>

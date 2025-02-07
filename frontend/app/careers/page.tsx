@@ -214,7 +214,7 @@ export default function Page() {
         {/* Job listings */}
         <div className="space-y-8">
           {jobs.map((section, index) => (
-            <div key={index} className="mx-60">
+            <div key={index} className="">
               <h2 className="text-xl font-semibold mb-4 text-[#555555]">{section.category}</h2>
               <div className="grid grid-cols-3 gap-5">
                 {section.positions.map((job, jobIndex) => (

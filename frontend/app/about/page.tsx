@@ -57,7 +57,7 @@ export default function page() {
       </div>
 
       <div>
-        <div className="grid grid-cols-2 p-10 my-10 mx-60 gap-20">
+        <div className="grid grid-cols-2 p-10 my-10 gap-20">
           <div className="flex justify-center">
             <div className="col-span-1 text-lg">
               <div className="w-64 h-w-64 rounded-lg overflow-hidden">
@@ -137,10 +137,10 @@ export default function page() {
 
           <div className="flex justify-end">
             <div>
-              <div className="text-[#6438C3] font-extrabold text-8xl">
+              <div className="text-[#6438C3] font-extrabold text-6xl">
                 <NumberTicker
                   value={20}
-                  className="text-[#6438C3] font-extrabold text-8xl"
+                  className="text-[#6438C3] font-extrabold text-6xl"
                 />
                 %
               </div>
@@ -168,7 +168,7 @@ export default function page() {
                   className="flex justify-center rounded-lg m-4"
                 >
                   <div className="m-4">
-                    <div className="w-58 h-w-58 rounded-lg overflow-hidden border">
+                    <div className="w-58 h-w-58 rounded-lg overflow-hidden ">
                       <Image
                         src={member.image}
                         alt="Founder"

@@ -1,46 +1,28 @@
-"use client"
+"use client";
 import { IconCloud } from "../../components/ui/icon-cloud";
 
 const slugs = [
-  "typescript",
-  "javascript",
-  "dart",
-  "java",
-  "react",
-  "flutter",
-  "android",
-  "html5",
-  "css3",
-  "nodedotjs",
-  "express",
-  "nextdotjs",
-  "prisma",
-  "amazonaws",
-  "postgresql",
-  "firebase",
-  "nginx",
-  "vercel",
-  "testinglibrary",
-  "jest",
-  "cypress",
-  "docker",
-  "git",
+  "appier",
+  "appsflyer",
+  "clevertap",
+  "content-full",
   "jira",
-  "github",
-  "gitlab",
-  "visualstudiocode",
-  "androidstudio",
-  "sonarqube",
-  "figma",
+  "moengage",
+  "netcore",
+  "optimove",
+  "salesforce",
+  "servicenow",
+  "smartsheet",
+  "unica",
+  "vtiger",
+  "zoho"
 ];
 
 export function ToolsCloud() {
-  const images = slugs.map(
-    (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`,
-  );
+  const images = slugs.map((slug) => `/icons/${slug}.svg`);
 
   return (
-    <div >
+    <div>
       <IconCloud images={images} />
     </div>
   );

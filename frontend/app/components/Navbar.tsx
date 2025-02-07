@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useRouter, usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
 
 export const Navbar = () => {
   const NavbarItems = [
@@ -14,7 +14,7 @@ export const Navbar = () => {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="size-4"
+          className="w-4 h-4"
         >
           <path
             strokeLinecap="round"
@@ -23,68 +23,61 @@ export const Navbar = () => {
           />
         </svg>
       ),
-    path : "/services/media-ott"
+      path: "/services/media-ott",
     },
-    { label: "Success Stories",
-      path : "/success-stories"
-     },
-    { label: "Blogs",
-      path : "/blogs"
-     },
-    { label: "Careers",
-      path : "/careers"
-     },
-    { label: "About",
-      path : "/about"
-     },
-    { label: "Contact",
-      path : "#contact"
-     },
+    { label: "Success Stories", path: "/success-stories" },
+    { label: "Blogs", path: "/blogs" },
+    { label: "Careers", path: "/careers" },
+    { label: "About", path: "/about" },
+    { label: "Contact", path: "#contact" },
   ];
 
-
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const router = useRouter();
+  const pathname = usePathname();
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    const currentIndex = NavbarItems.findIndex((item) => item.path === pathname);
+    setActiveIndex(currentIndex);
+  }, [pathname]);
 
   const handleClick = (path: string, index: number) => {
-    
     setActiveIndex(index);
     router.push(path);
   };
 
-
-
   return (
-    <nav>
-      <div className="flex justify-between p-4 px-64">
-        <div className="flex flex-col justify-center cursor-pointer mr-3  ">
-          <Image src="/logos/logo.svg" alt="logo" width={100} height={100} onClick={()=>router.push('/')} />
-        </div>
-
-        <div className="flex flex-col justify-center">
-          <div className="flex justify-between gap-24 text-lg">
+    <nav className=" mx-auto px-8 py-4">
+      <div className="flex justify-center items-center space-x-20">
+        <div className="flex items-center">
+          <Image
+            src="/logos/logo.svg"
+            alt="logo"
+            width={120}
+            height={1000}
+            className="cursor-pointer"
+            onClick={() => router.push("/")}
+          />
+          </div>
+          <div>
+          <div className="flex gap-8">
             {NavbarItems.map((item, index) => (
               <div
-              key={index}
-                className={`flex items-center hover:text-[#6438C3] cursor-pointer p-2 rounded-lg transition duration-300 ${
+                key={index}
+                className={`flex text-lg items-center gap-1 p-2 rounded-lg cursor-pointer transition duration-300 hover:text-[#6438C3] ${
                   activeIndex === index ? "text-[#6438C3] font-bold" : ""
                 }`}
                 onClick={() => handleClick(item.path, index)}
-              >
-                <span className="flex flex-col justify-center">{item.label}</span>
-                <span className="flex flex-col justify-center mx-2">
-                  {item.icon}
-                </span>
+              >{item.icon}
+                <span >  {item.label}</span>
+               
               </div>
             ))}
           </div>
         </div>
-
-        <div>
-          <button className="bg-[#6438C3] text-white p-3 rounded-lg px-6">
-            Book a call
-          </button>
-        </div>
+        <button className="bg-gradient-to-b from-[#6438C3] to-[#4B21A6] text-white py-4 px-6 rounded-lg">
+          Book a call
+        </button>
       </div>
     </nav>
   );
