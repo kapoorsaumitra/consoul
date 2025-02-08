@@ -13,7 +13,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             Book a Free Consultation
           </button>
         </div>
-        <div className="mx-40 my-20">
+        <div className="mx-40 my-20 flex justify-center">
           <DownloadGuide />
         </div>
         <div className="my-10">
