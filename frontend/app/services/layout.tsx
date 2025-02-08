@@ -8,7 +8,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div>
         <ServicesNav />
         {children}
-        <div className="text-center my-10">
+        <div className="text-center my-10" suppressHydrationWarning>
           <button className="bg-[#6438C3] text-white px-6 py-3 rounded-lg text-lg font-medium">
             Book a Free Consultation
           </button>

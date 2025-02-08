@@ -1,29 +1,29 @@
-"use client";
-import { useState } from "react";
-import { motion } from "framer-motion";
-import Image from "next/image";
+"use client"
+import { useState } from "react"
+import { motion } from "framer-motion"
+import Image from "next/image"
 
 interface Feature {
-  title: string;
-  description: string;
-  image: string;
+  title: string
+  description: string
+  image: string
 }
 
 interface Section {
-  id: number;
-  title: string;
-  subtitle: string;
-  features: Feature[];
+  id: number
+  title: string
+  subtitle: string
+  features: Feature[]
 }
 
 export default function Page() {
-  const [activeSection, setActiveSection] = useState(0);
+  const [activeSection, setActiveSection] = useState(0)
 
   const [activeFeaturesMap, setActiveFeaturesMap] = useState<Record<number, number>>({
     0: 0,
     1: 0,
     2: 0,
-  });
+  })
 
   const sections: Section[] = [
     {
@@ -34,22 +34,22 @@ export default function Page() {
         {
           title: "Map user journey on OTT",
           description: "to enhance engagement across discovery, subscription, and retention stages",
-          image: "/components/media&ottcomp1.svg",
+          image: "/components/media&ott1.1.png",
         },
         {
           title: "Advanced data segmentation",
           description: "for hyper-personalized messages based on individual preferences and other data",
-          image: "/components/media&ottcomp2.svg",
+          image: "/components/media&ott1.2.png",
         },
         {
           title: "Strategic benchmarking of competitors",
           description: "and insights into their content strategies, driving conversions",
-          image: "/components/media&ottcomp3.svg",
+          image: "/components/media&ott1.3.png",
         },
         {
           title: "Monitor real-time OTT KPIs",
           description: "to continuously optimize user experiences and retention strategies",
-          image: "/components/media&ottcomp1.svg",
+          image: "/components/media&ott1.4.png",
         },
       ],
     },
@@ -61,22 +61,22 @@ export default function Page() {
         {
           title: "Identify inefficiencies in the tech stack",
           description: "to enhance your OTT performance and boost ROI for content delivery",
-          image: "/components/media&ottcomp2.svg",
+          image: "/components/media&ott2.1.png",
         },
         {
           title: "Get tailored tool suggestions",
           description: "for advanced analytics and marketing operations",
-          image: "/components/media&ottcomp1.svg",
+          image: "/components/media&ott2.2.png",
         },
         {
           title: "Seamless shift to advanced MarTech tools",
           description: "with social migration and configurations to handle complex custom logic",
-          image: "/components/media&ottcomp3.svg",
+          image: "/components/media&ott2.3.png",
         },
         {
           title: "Ensure consistent audience interaction",
           description: "by setting up all communication channels like email, push notifications",
-          image: "/components/media&ottcomp1.svg",
+          image: "/components/media&ott2.4.png",
         },
       ],
     },
@@ -88,37 +88,37 @@ export default function Page() {
         {
           title: "Monthly content planning execution",
           description: "and channel coordination for end-to-end campaign management",
-          image: "/components/media&ottcomp3.svg",
+          image: "/components/media&ott3.0.png",
         },
         {
           title: "Continuously refine OTT campaigns",
           description: "with optimization, user flow testing, and other advanced testing methods",
-          image: "/components/media&ottcomp1.svg",
+          image: "/components/media&ott3.1.png",
         },
         {
           title: "Improve your campaign metrics",
           description: "with accessibility metrics and CTR improvement triggers",
-          image: "/components/media&ottcomp2.svg",
+          image: "/components/media&ott3.2.png",
         },
         {
           title: "Campaign reporting",
           description: "with real-time analytics, campaign tracking, and actionable insights",
-          image: "/components/media&ottcomp1.svg",
+          image: "/components/media&ott3.4.png",
         },
       ],
     },
-  ];
+  ]
 
   const handleSubtitleClick = (sectionId: number) => {
-    setActiveSection(sectionId);
+    setActiveSection(sectionId)
     setActiveFeaturesMap((prev) => ({
       ...prev,
       [sectionId]: (prev[sectionId] + 1) % sections[sectionId].features.length,
-    }));
-  };
+    }))
+  }
 
   const renderSectionContent = (section: Section) => {
-    const isMiddleSection = section.id === 1;
+    const isMiddleSection = section.id === 1
 
     const imageComponent = (
       <motion.div
@@ -138,54 +138,57 @@ export default function Page() {
           width={500}
         />
       </motion.div>
-    );
+    )
 
     const featuresComponent = (
-      <div className="space-y-8">
-        {section.features.map((feature, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3, delay: index * 0.1, ease: "easeInOut" }}
-            className="relative pl-6 cursor-pointer group"
-            onClick={() => {
-              setActiveSection(section.id);
-              setActiveFeaturesMap((prev) => ({
-                ...prev,
-                [section.id]: index,
-              }));
-            }}
-          >
-            <div
-              className={`absolute left-0 top-0 w-1 rounded-full h-full transition-all duration-300 ${
-                activeSection === section.id && activeFeaturesMap[section.id] === index
-                  ? "bg-[#6438C3]"
-                  : "bg-purple-100 group-hover:bg-purple-200"
-              }`}
-            />
-            <h3
-              className={`text-xl font-semibold mb-2 transition-colors duration-300 ${
-                activeSection === section.id && activeFeaturesMap[section.id] === index
-                  ? "text-[#6438C3]"
-                  : "text-gray-800 group-hover:text-[#6438C3]"
-              }`}
+      <div className="relative">
+        <div className="absolute left-[1] top-0 w-1 h-full bg-purple-100 rounded-full" />
+        <div className="space-y-8">
+          {section.features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: index * 0.1, ease: "easeInOut" }}
+              className="relative pl-6 cursor-pointer group"
+              onClick={() => {
+                setActiveSection(section.id)
+                setActiveFeaturesMap((prev) => ({
+                  ...prev,
+                  [section.id]: index,
+                }))
+              }}
             >
-              {feature.title}
-            </h3>
-            <p className="text-gray-600">{feature.description}</p>
-          </motion.div>
-        ))}
+              <div
+                className={`absolute left-0 top-0 w-1 h-full transition-all duration-300 ${
+                  activeSection === section.id && activeFeaturesMap[section.id] === index
+                    ? "bg-[#6438C3]"
+                    : "bg-purple-100"
+                }`}
+              />
+              <h3
+                className={`text-xl font-semibold mb-2 transition-colors duration-300 ${
+                  activeSection === section.id && activeFeaturesMap[section.id] === index
+                    ? "text-[#6438C3]"
+                    : "text-gray-800 group-hover:text-[#6438C3]"
+                }`}
+              >
+                {feature.title}
+              </h3>
+              <p className="text-gray-600">{feature.description}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    );
+    )
 
     return (
       <div className="grid md:grid-cols-2 gap-12 items-start">
         {isMiddleSection ? imageComponent : featuresComponent}
         {isMiddleSection ? featuresComponent : imageComponent}
       </div>
-    );
-  };
+    )
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -213,5 +216,6 @@ export default function Page() {
         </section>
       ))}
     </div>
-  );
+  )
 }
+

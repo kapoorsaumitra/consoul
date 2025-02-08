@@ -29,96 +29,97 @@ export default function Page() {
     {
       id: 0,
       title: "Strategic Marketing Programs",
-      subtitle: "We help OTT platforms achieve growth through targeted strategies",
+      subtitle: "We help F&B brands drive growth with data-driven marketing strategies",
       features: [
         {
-          title: "Map user journey on OTT",
-          description: "to enhance engagement across discovery, subscription, and retention stages",
-          image: "/components/media&ottcomp1.svg",
+          title: "Implement full-funnel CLM strategies",
+          description: "to ensure enhanced engagement across discovery, ordering, and loyalty stages",
+          image: "/components/fnb1.1.png",
         },
         {
-          title: "Advanced data segmentation",
-          description: "for hyper-personalized messages based on individual preferences and other data",
-          image: "/components/media&ottcomp2.svg",
+          title: "Get tailored communication and offers",
+          description: "using advanced data segmentation based on dining preferences, ordering habits, & preferred platforms",
+          image: "/components/fnb1.2.png",
         },
         {
-          title: "Strategic benchmarking of competitors",
-          description: "and insights into their content strategies, driving conversions",
-          image: "/components/media&ottcomp3.svg",
+          title: "Dominate the Food & Beverage industry",
+          description: "with strategic benchmarking and insights on menu promotions, delivery strategies, & loyalty programs",
+          image: "/components/fnb1.3.png",
         },
         {
-          title: "Monitor real-time OTT KPIs",
-          description: "to continuously optimize user experiences and retention strategies",
-          image: "/components/media&ottcomp1.svg",
+          title: "Boost repeat orders via funnel optimisation",
+          description: "by refining customer touch-points & ensuring a personalised dining experience",
+          image: "/components/fnb1.4.png",
         },
       ],
     },
     {
       id: 1,
-      title: "MarTech audits and optimization",
-      subtitle: "We streamline tech to create better viewer engagement",
+      title: "MarTech audits and optimisation",
+      subtitle: "We streamline tech to enhance customer engagement and loyalty",
       features: [
         {
-          title: "Identify inefficiencies in the tech stack",
-          description: "to enhance your OTT performance and boost ROI for content delivery",
-          image: "/components/media&ottcomp2.svg",
+          title: "Conduct a MarTech audit to identify",
+          description: "inefficiencies in your marketing tools, ensuring optimal performance and maximising ROI",
+          image: "/components/media&ott2.1.png",
         },
         {
-          title: "Get tailored tool suggestions",
-          description: "for advanced analytics and marketing operations",
-          image: "/components/media&ottcomp1.svg",
+          title: "Streamline ordering and elevate delivery",
+          description: "by getting tailored tool recommendations helping you achieve your business goals",
+          image: "/components/media&ott2.2.png",
         },
         {
-          title: "Seamless shift to advanced MarTech tools",
-          description: "with social migration and configurations to handle complex custom logic",
-          image: "/components/media&ottcomp3.svg",
+          title: "Migrate seamlessly to advanced tools",
+          description: "with phased plans that support scalable marketing and data analysis",
+          image: "/components/media&ott2.3.png",
         },
         {
-          title: "Ensure consistent audience interaction",
-          description: "by setting up all communication channels like email, push notifications",
-          image: "/components/media&ottcomp1.svg",
+          title: "Drive repeat purchase with better decisions",
+          description: "and get a unified dashboard that integrates data from POS systems, online orders, and loyalty programs",
+          image: "/components/media&ott2.4.png",
         },
       ],
     },
     {
       id: 2,
       title: "End-to-end campaign management",
-      subtitle: "We help you optimize campaigns to grow and retain subscribers",
+      subtitle: "We help you optimise campaigns to attract, engage, and retain customers",
       features: [
         {
-          title: "Monthly content planning execution",
-          description: "and channel coordination for end-to-end campaign management",
-          image: "/components/media&ottcomp3.svg",
+          title: "Run and refine targeted campaigns",
+          description: "by leveraging real-time analytics to increase order volumes and increase CLTV",
+          image: "/components/media&ott3.0.png",
         },
         {
-          title: "Continuously refine OTT campaigns",
-          description: "with optimization, user flow testing, and other advanced testing methods",
-          image: "/components/media&ottcomp1.svg",
+          title: "Enhance ad relevance and drive sign-ups",
+          description: "with advanced testing methods like multi-variate testing, content testing, & user flow testing",
+          image: "/components/media&ott3.1.png",
         },
         {
-          title: "Improve your campaign metrics",
-          description: "with accessibility metrics and CTR improvement triggers",
-          image: "/components/media&ottcomp2.svg",
+          title: "Maximise customer engagement and ROI",
+          description: "through dynamic campaigns tailored to dining habits and trends",
+          image: "/components/media&ott3.2.png",
         },
         {
-          title: "Campaign reporting",
-          description: "with real-time analytics, campaign tracking, and actionable insights",
-          image: "/components/media&ottcomp1.svg",
+          title: "Develop SOPs",
+          description: "to ensure scalable, consistent food and beverage campaigns with smooth coordination across teams",
+          image: "/components/media&ott3.4.png",
         },
       ],
     },
   ];
+  
 
   const handleSubtitleClick = (sectionId: number) => {
-    setActiveSection(sectionId);
+    setActiveSection(sectionId)
     setActiveFeaturesMap((prev) => ({
       ...prev,
       [sectionId]: (prev[sectionId] + 1) % sections[sectionId].features.length,
-    }));
-  };
+    }))
+  }
 
   const renderSectionContent = (section: Section) => {
-    const isMiddleSection = section.id === 1;
+    const isMiddleSection = section.id === 1
 
     const imageComponent = (
       <motion.div
@@ -138,54 +139,57 @@ export default function Page() {
           width={500}
         />
       </motion.div>
-    );
+    )
 
     const featuresComponent = (
-      <div className="space-y-8">
-        {section.features.map((feature, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3, delay: index * 0.1, ease: "easeInOut" }}
-            className="relative pl-6 cursor-pointer group"
-            onClick={() => {
-              setActiveSection(section.id);
-              setActiveFeaturesMap((prev) => ({
-                ...prev,
-                [section.id]: index,
-              }));
-            }}
-          >
-            <div
-              className={`absolute left-0 top-0 w-1 rounded-full h-full transition-all duration-300 ${
-                activeSection === section.id && activeFeaturesMap[section.id] === index
-                  ? "bg-[#6438C3]"
-                  : "bg-purple-100 group-hover:bg-purple-200"
-              }`}
-            />
-            <h3
-              className={`text-xl font-semibold mb-2 transition-colors duration-300 ${
-                activeSection === section.id && activeFeaturesMap[section.id] === index
-                  ? "text-[#6438C3]"
-                  : "text-gray-800 group-hover:text-[#6438C3]"
-              }`}
+      <div className="relative">
+        <div className="absolute left-[1] top-0 w-1 h-full bg-purple-100 rounded-full" />
+        <div className="space-y-8">
+          {section.features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: index * 0.1, ease: "easeInOut" }}
+              className="relative pl-6 cursor-pointer group"
+              onClick={() => {
+                setActiveSection(section.id)
+                setActiveFeaturesMap((prev) => ({
+                  ...prev,
+                  [section.id]: index,
+                }))
+              }}
             >
-              {feature.title}
-            </h3>
-            <p className="text-gray-600">{feature.description}</p>
-          </motion.div>
-        ))}
+              <div
+                className={`absolute left-0 top-0 w-1 h-full transition-all duration-300 ${
+                  activeSection === section.id && activeFeaturesMap[section.id] === index
+                    ? "bg-[#6438C3]"
+                    : "bg-purple-100"
+                }`}
+              />
+              <h3
+                className={`text-xl font-semibold mb-2 transition-colors duration-300 ${
+                  activeSection === section.id && activeFeaturesMap[section.id] === index
+                    ? "text-[#6438C3]"
+                    : "text-gray-800 group-hover:text-[#6438C3]"
+                }`}
+              >
+                {feature.title}
+              </h3>
+              <p className="text-gray-600">{feature.description}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    );
+    )
 
     return (
       <div className="grid md:grid-cols-2 gap-12 items-start">
         {isMiddleSection ? imageComponent : featuresComponent}
         {isMiddleSection ? featuresComponent : imageComponent}
       </div>
-    );
-  };
+    )
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -213,5 +217,6 @@ export default function Page() {
         </section>
       ))}
     </div>
-  );
+  )
 }
+

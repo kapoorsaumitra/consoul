@@ -12,15 +12,15 @@ export const Services = () => {
       points: [
         {
           text: "Hyper-personalised offerings through data segmentation",
-          image: "/components/data-driven-strategies-1.svg",
+          image: "/components/data-driven-strategies-1.png",
         },
         {
           text: "Targeted loyalty and gamification programs",
-          image: "/components/data-driven-strategies-2.svg",
+          image: "/components/data-driven-strategies-2.png",
         },
         {
           text: "Channel optimisation for timely, targeted messaging",
-          image: "/components/data-driven-strategies-3.svg",
+          image: "/components/data-driven-strategies-3.png",
         },
       ],
     },
@@ -29,15 +29,15 @@ export const Services = () => {
       points: [
         {
           text: "Get mar-tech audit and implementation",
-          image: "/components/martech-tools-1.svg",
+          image: "/components/martech-tools-1.png",
         },
         {
           text: "Identify mar-tech gaps and get tool recommendations",
-          image: "/components/martech-tools-2.svg",
+          image: "/components/martech-tools-2.png",
         },
         {
           text: "Migrate and align tools for smoother operations",
-          image: "/components/martech-tools-3.svg",
+          image: "/components/martech-tools-3.png",
         },
       ],
     },
@@ -46,15 +46,15 @@ export const Services = () => {
       points: [
         {
           text: "Create SOPs for efficient, consistent operations",
-          image: "/components/optimise-operations-1.svg",
+          image: "/components/optimise-operations-1.png",
         },
         {
           text: "Get on-demand campaign execution",
-          image: "/components/optimise-operations-2.svg",
+          image: "/components/optimise-operations-2.png",
         },
         {
           text: "Experiment and real-time data to boost performance",
-          image: "/components/optimise-operations-3.svg",
+          image: "/components/optimise-operations-3.png",
         },
       ],
     },

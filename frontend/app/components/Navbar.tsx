@@ -46,7 +46,7 @@ export const Navbar = () => {
   }
 
   return (
-    <nav className="mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <nav className="mx- sm:px-6 py-4">
       <div className="flex justify-between items-center lg:justify-center lg:space-x-20">
         <div className="flex items-center">
           <Image

@@ -56,7 +56,7 @@ export const Testimonial = () => {
               Words from <br /> our clients
             </div>
             {/* Fixed position navigation buttons */}
-            <div className="flex mt-4 gap-4">
+            <div className="flex mt-8 gap-6">
               <button onClick={prevTestimonial} className="flex-shrink-0">
                 <svg
                   width="51"
