@@ -142,7 +142,7 @@ export default function Page() {
 
     const featuresComponent = (
       <div className="relative">
-        <div className="absolute left-[1] top-0 w-1 h-full bg-purple-100 rounded-full" />
+        <div className="absolute left-[1] top-0 w-1 h-full bg-purple-100 rounded-t-full rounded-b-full" />
         <div className="space-y-8">
           {section.features.map((feature, index) => (
             <motion.div
@@ -160,7 +160,7 @@ export default function Page() {
               }}
             >
               <div
-                className={`absolute left-0 top-0 w-1 h-full transition-all duration-300 ${
+                className={`absolute left-0 top-0 w-1 h-full transition-all duration-300 rounded-t-full rounded-b-full ${
                   activeSection === section.id && activeFeaturesMap[section.id] === index
                     ? "bg-[#6438C3]"
                     : "bg-purple-100"

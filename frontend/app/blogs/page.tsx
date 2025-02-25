@@ -19,9 +19,9 @@ export default function Page() {
                 <input
                   type="text"
                   placeholder="Enter your email address"
-                  className="p-2 px-4 text-black focus:outline-none rounded-lg "
+                  className="p-2 px-4 text-black focus:outline-none rounded-lg w-96 "
                 />
-                <button className="p-2 px-6 rounded-lg bg-white text-[#6438C3]">
+                <button className="p-2 px-6 rounded-lg bg-white text-[#6438C3] ">
                   Subscribe
                 </button>
               </div>

@@ -38,7 +38,7 @@ export const Hero = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-1 md:grid-cols-2">
         <div className="col-span-1">
           <div className="flex justify-end">
             <div className="p-4 grid text-[#555555] pt-20 gap-6">
@@ -91,7 +91,7 @@ export const Hero = () => {
               </div>
 
               <div>
-                <button className="bg-[#6438C3] text-white text-xl p-3 rounded-lg px-6">
+                <button className="bg-gradient-to-b from-[#6438C3] to-[#4B21A6] text-white text-xl p-3 rounded-lg px-6">
                   Book a free consultation
                 </button>
               </div>
@@ -99,7 +99,7 @@ export const Hero = () => {
           </div>
         </div>
 
-        <div className="col-span-1">
+        <div className="hidden md:block col-span-1">
           <div className="p-4 flex justify-start overflow-hidden h-[550px]">
             <motion.div
               animate={{ y: [0, -1300, 0] }} // Move down by the full height (550px) and then back up

@@ -8,17 +8,23 @@ export interface BlogPost {
     tags: string[]
     image: string
   }
+
+  //komal ranka
+  
   
   export const blogPosts: BlogPost[] = [
     {
       id: "1",
-      title: "virat Ipsum is simply dummy text of the printing and typesetting industry",
+      title: "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
       date: "Sept 27, 2023",
       readingTime: "5 mins read",
       category: "Business Analytics",
       tags: ["digital marketing", "lead gen", "customer lifecycle"],
-      image: "/components/success.svg",   },
+      image: "/components/success.svg", 
+      },
+
+
       
     {
       id: "2",
@@ -30,6 +36,7 @@ export interface BlogPost {
       tags: ["business intelligence", "data analytics", "AI tools"],
       image: "/components/success.svg",   },
 
+     
     
   ].concat(
     Array(10)

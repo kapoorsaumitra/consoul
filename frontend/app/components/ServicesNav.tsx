@@ -46,19 +46,19 @@ export const ServicesNav = () => {
             key={service.name}
             onClick={() => handleServiceClick(service)}
             className={`cursor-pointer grid gap-2 transition-colors duration-300 ${
-              isActive ? "text-[#6438C3]" : "hover:text-[#6438C3]"
+              isActive ? "text-[#6438C3] font-semibold" : "hover:text-[#6438C3]"
             }`}
           >
             <div className="flex justify-center relative">
-              <Image
+              <div className={`p-2 rounded ${isActive ? "bg-[#F1EAFF]" : ""}`}><Image
                 src={service.icon}
                 alt={service.name}
                 height={20}
                 width={20}
                 className={`transition-all duration-300 ${
-                  isActive ? "filter brightness-0 invert-[0.4] sepia-[1] saturate-[1] hue-rotate-[220deg]" : ""
+                  isActive ? "text-[#6438C3]" : ""
                 }`}
-              />
+              /></div>
               
             </div>
             <div className="text-center">{service.name}</div>
