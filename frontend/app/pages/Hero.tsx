@@ -101,17 +101,17 @@ export const Hero = () => {
 
         <div className="hidden md:block col-span-1">
           <div className="p-4 flex justify-start overflow-hidden h-[550px]">
-            {/* First vertical image */}
+            {/* Vertical scrolling image */}
             <motion.div
               className="flex flex-col"
-              animate={{ y: "-50%" }}
+              animate={{ y: ["0%", "-200%"] }}
               transition={{
-                duration: 7,
+                duration: 15,
                 repeat: Infinity,
                 ease: "linear",
-                repeatType: "loop"
+                repeatType: "mirror"
               }}
-              style={{ paddingBottom: "20px" }}
+              style={{ paddingBottom: "0px" }}
             >
               <Image
                 src="/components/hero1.png"
@@ -119,7 +119,14 @@ export const Hero = () => {
                 width={550}
                 height={1100}
               />
-              {/* Duplicate image for seamless vertical scroll */}
+              {/* Second image for seamless scroll */}
+              <Image
+                src="/components/hero1.png"
+                alt="Hero"
+                width={550}
+                height={1100}
+              />
+              {/* Third image for extra smoothness */}
               <Image
                 src="/components/hero1.png"
                 alt="Hero"
@@ -134,18 +141,18 @@ export const Hero = () => {
       <div className="overflow-hidden w-full mt-6">
         <div className="relative">
           <div className="flex">
-            {/* First set of logos */}
             <motion.div
               className="flex items-center gap-16"
-              animate={{ x: "-50%" }}
+              animate={{ x: ["0%", "-50%"] }}
               transition={{ 
                 repeat: Infinity, 
-                duration: 20, 
+                duration: 28, 
                 ease: "linear",
-                repeatType: "loop"
+                repeatType: "mirror" 
               }}
               style={{ width: "max-content" }}
             >
+              {/* First set of logos */}
               {logos.slice(0, logos.length/3).map((logo, index) => (
                 <div key={index} className="flex-shrink-0 w-40">
                   <Image
@@ -158,8 +165,24 @@ export const Hero = () => {
                   />
                 </div>
               ))}
+              
+              {/* Identical second set (ensures seamless loop) */}
               {logos.slice(0, logos.length/3).map((logo, index) => (
                 <div key={`clone-${index}`} className="flex-shrink-0 w-40">
+                  <Image
+                    src={logo}
+                    className="h-auto"
+                    alt="logo"
+                    height={40}
+                    width={160}
+                    style={{ width: "100%", objectFit: "contain" }}
+                  />
+                </div>
+              ))}
+              
+              {/* Add a third set to ensure no gaps during transition */}
+              {logos.slice(0, logos.length/3).map((logo, index) => (
+                <div key={`clone2-${index}`} className="flex-shrink-0 w-40">
                   <Image
                     src={logo}
                     className="h-auto"
