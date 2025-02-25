@@ -101,19 +101,30 @@ export const Hero = () => {
 
         <div className="hidden md:block col-span-1">
           <div className="p-4 flex justify-start overflow-hidden h-[550px]">
+            {/* First vertical image */}
             <motion.div
-              animate={{ y: [0, -1300, 0] }} // Move down by the full height (550px) and then back up
+              className="flex flex-col"
+              animate={{ y: "-50%" }}
               transition={{
-                duration: 15,
+                duration: 7,
                 repeat: Infinity,
-                ease: "easeInOut",
+                ease: "linear",
+                repeatType: "loop"
               }}
+              style={{ paddingBottom: "20px" }}
             >
               <Image
                 src="/components/hero1.png"
                 alt="Hero"
                 width={550}
-                height={1100} // Taller to simulate the scroll
+                height={1100}
+              />
+              {/* Duplicate image for seamless vertical scroll */}
+              <Image
+                src="/components/hero1.png"
+                alt="Hero"
+                width={550}
+                height={1100}
               />
             </motion.div>
           </div>
@@ -121,22 +132,47 @@ export const Hero = () => {
       </div>
 
       <div className="overflow-hidden w-full mt-6">
-        <motion.div
-          className="flex space-x-20"
-          animate={{ x: ["0%", "-100%"] }}
-          transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
-        >
-          {logos.map((logo, index) => (
-            <Image
-              key={index}
-              src={logo}
-              className="w-40 h-auto"
-              alt="logo"
-              height={40}
-              width={40}
-            />
-          ))}
-        </motion.div>
+        <div className="relative">
+          <div className="flex">
+            {/* First set of logos */}
+            <motion.div
+              className="flex items-center gap-16"
+              animate={{ x: "-50%" }}
+              transition={{ 
+                repeat: Infinity, 
+                duration: 20, 
+                ease: "linear",
+                repeatType: "loop"
+              }}
+              style={{ width: "max-content" }}
+            >
+              {logos.slice(0, logos.length/3).map((logo, index) => (
+                <div key={index} className="flex-shrink-0 w-40">
+                  <Image
+                    src={logo}
+                    className="h-auto"
+                    alt="logo"
+                    height={40}
+                    width={160}
+                    style={{ width: "100%", objectFit: "contain" }}
+                  />
+                </div>
+              ))}
+              {logos.slice(0, logos.length/3).map((logo, index) => (
+                <div key={`clone-${index}`} className="flex-shrink-0 w-40">
+                  <Image
+                    src={logo}
+                    className="h-auto"
+                    alt="logo"
+                    height={40}
+                    width={160}
+                    style={{ width: "100%", objectFit: "contain" }}
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
       </div>
     </div>
   );
